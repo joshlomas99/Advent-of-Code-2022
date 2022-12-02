@@ -9,7 +9,7 @@ using namespace std;
 void Day1() {
     // Create vector for elf sums and start the first elf at zero
     vector<int> elves;
-    elves.push_back(0);
+    int sum{0};
     string line;
     ifstream myfile("../Inputs/Day1_Inputs.txt");
     // Read data from input file
@@ -19,15 +19,16 @@ void Day1() {
         {
             // New lines indiciate a new elf
             if (line.length() == 0) {
-                elves.push_back(0);
+                elves.push_back(sum);
+                sum = 0;
             } else {
                 // Else add the new calories to the current elf's total
-                elves[elves.size()-1] += stoi(line);
+                sum += stoi(line);
             }
         }
         myfile.close();
     } else {
-        cout << "Unable to open file"; 
+        cout << "Unable to open file" << endl;
     }
     // Sort totals in ascending order
     sort(elves.begin(), elves.end());
