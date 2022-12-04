@@ -1,2 +1,2 @@
 # Advent-of-Code-2022
-A 2 part coding puzzle released for every day of advent. There are my solutions in Python (because it's easiest).
+[Aoc 2022](https://adventofcode.com/2022) is the 2022 edition of an event where a 2 part coding puzzle is released for every day of advent. These are my solutions mainly in Python (because it's easiest), but I'm also attempting as many other languages as possible to try and learn some stuff...
