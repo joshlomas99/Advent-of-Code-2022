@@ -1,4 +1,4 @@
-def get_input(input_file: str='Inputs/Day17_Inputs.txt') -> list:
+def get_input(input_file: str='Inputs/Day17_Inputs.txt') -> str:
     """
     Parse an input file describing the directions of a series of jets of hot gas in a cave.
 
@@ -20,7 +20,7 @@ def get_input(input_file: str='Inputs/Day17_Inputs.txt') -> list:
 
     return jets
 
-def draw_cave(stopped, moving={}, max_rows=None):
+def draw_cave(stopped: set, moving: set={}, max_rows=None) -> None:
     """
     Draw a cave and all the rocks currently in it, both stopped and moving.
 
@@ -63,7 +63,7 @@ def draw_cave(stopped, moving={}, max_rows=None):
     # Add the floor at the bottom
     print('+-------+')
 
-def process_rock_fall(base_rock, stopped, jets, jet_index):
+def process_rock_fall(base_rock: set, stopped: set, jets: str, jet_index: int) -> tuple:
     """
     Simulate a single rock of a given type, falling into a cave containing a given set of stopped
     rocks, which is pushed horizontally as it falls by a given series of jet of hot air and stops
@@ -148,7 +148,7 @@ def process_rock_fall(base_rock, stopped, jets, jet_index):
             # Else perform the movement, setting the new rock position, and continue
             rock = next_pos.copy()
 
-def Day17_Part1(input_file: str='Inputs/Day17_Inputs.txt', total_rocks=2022) -> int:
+def Day17_Part1(input_file: str='Inputs/Day17_Inputs.txt', total_rocks: int=2022) -> int:
     """
     Find the total height of the tower formed by a series of rocks falling into a cave, after a
     given number of rocks have stopped. Rocks appear in the cave and then fall down, and are also
@@ -255,7 +255,7 @@ def Day17_Part1(input_file: str='Inputs/Day17_Inputs.txt', total_rocks=2022) -> 
 
     return total_height
 
-def Day17_Part2(input_file: str='Inputs/Day17_Inputs.txt', total_rocks=1000000000000) -> int:
+def Day17_Part2(input_file: str='Inputs/Day17_Inputs.txt', total_rocks: int=1000000000000) -> int:
     """
     Find the total height of the tower formed by a series of rocks falling into a cave, after a
     given number of rocks have stopped. Rocks appear in the cave and then fall down, and are also
