@@ -1,6 +1,6 @@
 import re
 
-def get_input(input_file: str='Inputs/Day19_TestInputs.txt') -> list:
+def get_input(input_file: str='Inputs/Day19_TestInputs.txt') -> dict:
     """
     Parse an input file giving a set of blueprints detailling the resources required for building
     a series of robots.
